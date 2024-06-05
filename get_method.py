@@ -37,4 +37,7 @@ ressponce= requests.get(url=api_url)
 json_format=ressponce.json()
 print(json_format)
 
+status_code=response.status_code #output ==> 200
+
+print(response.headers["Content-Type"]) #output ==> 'application/json; charset=utf-8'
 '''
