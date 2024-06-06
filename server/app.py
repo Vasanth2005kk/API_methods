@@ -71,7 +71,7 @@ def delete_employee(id: int):
   global employees
   employee = get_employee(id)
   if employee is None:
-    return jsonify({ 'error': 'Employee does not exist.' }), 404
+    return jsonify({ 'error': 'Employee ID does not exist.' }), 404
 
   employee = []#[e for e in employees if e['id'] != id]
   delete_employee_lits=[]
