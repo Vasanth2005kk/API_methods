@@ -1,3 +1,30 @@
+import requests
+
+name = input("What would you like your employee to be named? ")
+
+post_url="http://localhost:5000/employees"
+
+#  commend line interface (CLI)
+#  curl -X POST http://localhost:5000/employees -H "Content-Type: application/json" -d '{ "name" : "praveen" }'
+
+employee = {
+    "name": name
+    }
+
+headers = {"Content-type": "application/json"}
+
+response = requests.post(post_url, json=employee, headers=headers)
+if  response.status_code == 201:
+    print(response.json()) 
+
+
+# print(response.content)
+# print(response.headers)
+# print(response.status_code)
+
+
+# example reference code 
+'''
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -22,7 +49,6 @@ if __name__ == "__main__":
 
 
 
-'''
 data={
   "num1":100,
   "num2":500
